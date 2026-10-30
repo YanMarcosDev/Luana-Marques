@@ -30,17 +30,19 @@ export function BioPage() {
       >
         {siteConfig.name}
       </h1>
-      <p
-        style={{ animationDelay: "140ms", animationFillMode: "backwards" }}
-        className="animate-fade-in mt-3 max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground sm:max-w-sm"
-      >
-        {siteConfig.description}
-      </p>
+      {siteConfig.description ? (
+        <p
+          style={{ animationDelay: "140ms", animationFillMode: "backwards" }}
+          className="animate-fade-in mt-3 max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground sm:max-w-sm"
+        >
+          {siteConfig.description}
+        </p>
+      ) : null}
 
       <div className="mt-8 flex w-full flex-col gap-3.5">
         <LinkButton
           href={siteConfig.links.telegram}
-          label="Entrar no Telegram"
+          label="Entrar no Close Privê"
           sublabel="Canal exclusivo"
           icon={TelegramIcon}
           tone="telegram"
@@ -59,7 +61,7 @@ export function BioPage() {
         style={{ animationDelay: "480ms", animationFillMode: "backwards" }}
         className="animate-fade-in mt-12 text-[0.7rem] tracking-wide text-muted-foreground/70"
       >
-        Conteúdo destinado exclusivamente para maiores de 18 anos.
+        Conteúdo exclusivo.
       </footer>
     </main>
   );

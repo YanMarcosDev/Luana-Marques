@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
-import { AgeGate, hasStoredConsent } from "@/components/bio/AgeGate";
 import { TurnstileGate, hasValidHumanSession } from "@/components/bio/TurnstileGate";
 import { BioPage } from "@/components/bio/BioPage";
 import { ParticleField } from "@/components/bio/ParticleField";
@@ -25,11 +24,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [ready, setReady] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
   const [verified, setVerified] = useState(false);
 
   useEffect(() => {
-    setConfirmed(hasStoredConsent());
     setVerified(hasValidHumanSession());
     setReady(true);
   }, []);
@@ -43,9 +40,7 @@ function Index() {
         className="pointer-events-none absolute left-1/2 top-[-18%] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-white/[0.07] blur-[120px]"
       />
       <ParticleField />
-      {!ready ? null : !confirmed ? (
-        <AgeGate onEnter={() => setConfirmed(true)} />
-      ) : !verified ? (
+      {!ready ? null : !verified ? (
         <TurnstileGate onVerified={handleVerified} />
       ) : (
         <BioPage />

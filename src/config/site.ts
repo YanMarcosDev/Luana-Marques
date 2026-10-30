@@ -4,8 +4,7 @@
  */
 export const siteConfig = {
   name: "Luana Marques",
-  description:
-    "✨ Conteúdo exclusivo • Acesso privado • Apenas para maiores de 18 anos",
+  description: "",
   /**
    * FOTO DE PERFIL — SUBSTITUA A URL ABAIXO PELA FOTO DEFINITIVA DA CRIADORA.
    * (é o único lugar onde a imagem é definida)
@@ -13,7 +12,7 @@ export const siteConfig = {
   photo: "/luana-marques.jpg",
   seoTitle: "Luana Marques — Links Oficiais",
   seoDescription:
-    "Acesse os canais oficiais de Luana Marques: Telegram e Privacy. Conteúdo exclusivo +18.",
+    "Acesse os canais oficiais de Luana Marques: Close Privê e Privacy. Conteúdo exclusivo.",
   links: {
     // Substitua pelas URLs reais
     telegram: "https://telegram.me/LuanaMarquescpbot",
